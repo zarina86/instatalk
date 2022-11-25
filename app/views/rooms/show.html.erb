@@ -1,0 +1,17 @@
+<h1>Room <%= @room.id %></h1>
+
+<div class="col-4 mt-2 mb-2 text-left">
+  <div>Online: <div id="online" class="text-success"></div></div>
+</div>
+
+<%= link_to "Leave", root_path, data: { turbolinks:false }%>
+
+<p id="notice"><%= notice %></p>
+
+<div class="messages">
+  <div class="messages-inner" id="messages" data-room-id="<%= @room.id %>">
+    <%= render @room.messages %>
+  </div>
+</div>
+
+<%= render 'messages/form' %>
